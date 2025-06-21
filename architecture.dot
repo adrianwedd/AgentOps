@@ -1,0 +1,27 @@
+digraph G {
+    rankdir=LR;
+    node [shape=box, style=filled, fillcolor="#E8E8E8"];
+
+    subgraph cluster_actions {
+        label="GitHub Actions";
+        style=filled;
+        color=lightgrey;
+        Refresh [label="Refresh Workflow"];
+        CI [label="CI Workflow"];
+    }
+
+    GitHubAPI [label="GitHub API", shape=component, fillcolor="#FFD580"];
+    Scraper [fillcolor="#ADD8E6"];
+    Cache [fillcolor="#ADD8E6"];
+    Injector [fillcolor="#ADD8E6"];
+    Docs [label="Docs / README", fillcolor="#98FB98"];
+    PR [label="Pull Request", fillcolor="#FFFACD"];
+
+    GitHubAPI -> Scraper;
+    Refresh -> Scraper;
+    Scraper -> Cache;
+    Cache -> Injector;
+    Injector -> Docs;
+    Docs -> PR;
+    PR -> CI;
+}
