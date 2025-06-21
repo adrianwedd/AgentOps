@@ -126,7 +126,7 @@ jobs:
           PY
       - name: Create pull request
         if: env.CHANGES_DETECTED == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           branch: chore/readme-refresh-${{ github.run_id }}
           commit-message: "chore: nightly metrics refresh (${{ github.run_date }})"

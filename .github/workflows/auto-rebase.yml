@@ -44,7 +44,7 @@ jobs:
           git push --force-with-lease
       - name: Create auto-rebase PR
         if: steps.stale.outputs.result != ''
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ github.token }}
           title: auto-rebase

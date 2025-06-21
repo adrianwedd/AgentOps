@@ -79,7 +79,7 @@ jobs:
       - name: Create refresh PR
         if: steps.detect-changes.outputs.changed == 'true'
         id: createpr
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "chore(data): nightly agent index refresh"
           branch: ${{ env.BRANCH }}

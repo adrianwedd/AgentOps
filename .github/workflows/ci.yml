@@ -252,7 +252,7 @@ jobs:
       - name: Update security badge
         run: python scripts/update_security_badge.py --check bandit.json || python scripts/update_security_badge.py --write bandit.json
       - name: Auto-PR for badges
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "docs: update badges"
           branch: badge-update-${{ github.run_id }}
